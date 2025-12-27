@@ -50,11 +50,8 @@
     </form>
 </div>
 
-{% if success %}
-<script>
-    alert("🎉 Registration Successful! Your data has been saved.");
-</script>
-{% endif %}
+<p id="success-msg" style="display:none;">Registration successful</p>
+
 
 <script>
 function togglePassword() {
@@ -91,4 +88,5 @@ function validateForm() {
 
 </body>
 </html>
+
 

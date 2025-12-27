@@ -1,0 +1,26 @@
+body {
+    font-family: Arial;
+    background: #eef2f3;
+    padding: 20px;
+}
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    padding: 10px;
+    width: 200px;
+}
+
+.search-box button {
+    padding: 10px;
+}
+
+.labor-card {
+    background: white;
+    padding: 15px;
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}

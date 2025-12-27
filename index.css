@@ -1,0 +1,125 @@
+/* About Section */
+.about {
+    background: rgb(220, 213, 213);
+    margin: 30px auto;
+    padding: 30px;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.about h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.about p {
+    color: #251e1e;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+/* Mobile friendly */
+@media (max-width: 700px) {
+    .about {
+        width: 95%;
+        padding: 20px;
+    }
+}
+/* Footer */
+footer {
+    background: #2e2d2d;
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 40px 30px;
+}
+
+.footer-section {
+    max-width: 300px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    margin-bottom: 10px;
+    color: #4facfe;
+}
+
+.footer-section p {
+    font-size: 18px;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+.footer-section a {
+    display: block;
+    text-decoration: none;
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 6px;
+    transition: 0.3s;
+}
+
+.footer-section a:hover {
+    color: #4facfe;
+}
+
+/* Footer bottom */
+.footer-bottom {
+    text-align: center;
+    background: #111;
+    padding: 10px;
+    font-size: 13px;
+    color: #aaaaaa;
+}
+
+/* Mobile Responsive */
+@media (max-width: 700px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+/* Fade-in animation */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide-up cards */
+.slide-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.slide-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Button hover animation */
+.animate-btn:hover {
+    transform: scale(1.05);
+}

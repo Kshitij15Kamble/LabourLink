@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LaborLink | Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+<!-- Header -->
+<header class="fade-in">
+    <center><img src="{{ url_for('static', filename='images/logo.png') }}" class="logo" alt="LaborLink Logo"></center>
+    <center><h1>LaborLink</h1></center>
+    <center><p>Connecting Workers with Opportunities</p></center>
+</header>
+
+<!-- About Section -->
+<section class="about">
+    <h2>About LaborLink</h2>
+    <p>
+        LaborLink is a simple and user-friendly platform designed to help
+        workers find job opportunities and help employers find reliable labor,
+        especially in rural and local areas.
+    </p>
+    <p>
+        Workers can register their basic details such as skills, location,
+        and contact information, while employers can easily search for labor
+        based on their requirements.
+    </p>
+    <p>
+        Our goal is to reduce labor shortages, save time, and create more
+        employment opportunities by connecting people quickly and efficiently.
+    </p>
+</section>
+
+<!-- Main Content -->
+<div class="main-container">
+    <div class="card slide-up">
+        <center><h2>For Workers</h2></center>
+        <center><p>Register yourself and get job opportunities near your location.</p></center>
+        <center><a href="/register-labor" class="btn animate-btn">Register as Labor</a></center>
+    </div>
+
+    <div class="card slide-up">
+        <center><h2>For Employers</h2></center>
+        <center><p>Find skilled labor easily based on location and need.</p></center>
+        <center><a href="/search-labor" class="btn animate-btn">Find Labor</a></center>
+    </div>
+</div>
+<script>
+    window.addEventListener("load", () => {
+        const cards = document.querySelectorAll(".slide-up");
+        cards.forEach((card, index) => {
+            setTimeout(() => {
+                card.classList.add("show");
+            }, index * 200);
+        });
+    });
+</script>
+
+<!-- Footer -->
+<footer>
+    <p>© 2025 LaborLink | Made by Kshitij</p>
+    <!-- Footer -->
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>LaborLink</h3>
+            <p>Connecting workers and employers quickly and easily.</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#">About</a>
+            <a href="#">Help</a>
+            <a href="#">Contact</a>
+            <a href="#">Reviews</a>
+        </div>
+
+        <div class="footer-section">
+            <h4>Support</h4>
+            <p>Email: support@laborlink.com</p>
+            <p>Phone: +91 98765 43210</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 LaborLink | Made by Kshitij</p>
+    </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labor Registration | LaborLink</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>LaborLink</h1>
+    <p class="tagline">Labor Registration</p>
+
+    <form method="POST" onsubmit="return validateForm()">
+
+        <!-- Full Name -->
+        <label>Full Name</label>
+        <input type="text" name="full_name" placeholder="Enter full name" required>
+
+        <!-- Age -->
+        <label>Age</label>
+        <input type="number" name="age" placeholder="Enter age" required>
+
+        <!-- Gender -->
+        <label>Gender</label>
+        <div class="gender-box">
+            <label><input type="radio" name="gender" value="Male" required> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Transgender"> Transgender</label>
+        </div>
+
+        <!-- Email -->
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter email address" required>
+
+        <!-- Phone -->
+        <label>Phone Number</label>
+        <input type="text" name="phone" placeholder="Enter 10-digit phone number" required>
+
+        <!-- Password -->
+        <label>Password</label>
+        <input type="password" name="password" id="password" placeholder="Create password" required>
+
+        <label class="show-pass">
+            <input type="checkbox" onclick="togglePassword()"> Show Password
+        </label>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+{% if success %}
+<script>
+    alert("🎉 Registration Successful! Your data has been saved.");
+</script>
+{% endif %}
+
+<script>
+function togglePassword() {
+    let pass = document.getElementById("password");
+    pass.type = pass.type === "password" ? "text" : "password";
+}
+
+function validateForm() {
+    let age = document.querySelector('input[name="age"]').value;
+    let email = document.querySelector('input[name="email"]').value;
+    let phone = document.querySelector('input[name="phone"]').value;
+
+    if (age < 18) {
+        alert("Age must be 18 or above.");
+        return false;
+    }
+
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    let phoneRegex = /^[0-9]{10}$/;
+
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    if (!phoneRegex.test(phone)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+    }
+
+    return true;
+}
+</script>
+
+</body>
+</html>
